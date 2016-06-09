@@ -39,6 +39,50 @@ trait False extends Bool {
   override type If[T <: Up, F <: Up, Up] = F
 }
 
+/**
+ * Implements type constructors for common operations on type level booleans and a method to obtain the value level
+ * representation of typelevel booleans.
+ *
+ * The operations can be shown to satisfy:
+ *
+ * 1. Associativity of Or: ||[A, B || C] =:= ||[A || B, C]
+ *
+ * 2. Associativity of And: &&[A, B && C] =:= &&[A && B, C]
+ *
+ * 3. Commutativity of Or: ||[A, B] =:= ||[B, A]
+ *
+ * 4. Commutativity of And: &&[A, B] =:= &&[B, A]
+ *
+ * 5. Distributivity of Or over And: ||[A, B && C] =:= &&[A || B, A || C]
+ *
+ * 6. Distributivity of And over Or: &&[A, B || C] =:= ||[A && B, A && C]
+ *
+ * 7. Identity for Or: ||[A, False] =:= A
+ *
+ * 8. Identity for And: &&[A, True] =:= A
+ *
+ * 9. Annhilator for Or: ||[A, True] =:= True
+ *
+ * 10. Annhilator for And: &&[A, False] =:= False
+ *
+ * 11. Idempotence of Or: ||[A, A] =:= A
+ *
+ * 12. Idempotence of And: &&[A, A] =:= A
+ *
+ * 13. Absorption 1: &&[A, A || B] =:= A
+ *
+ * 14. Absorbtion 2: ||[A, A && B] =:= A
+ *
+ * 15. Complementation 1: &&[A, Not[A]] =:= False
+ *
+ * 16. Complementation 2: ||[A, Not[A]] =:= True
+ *
+ * 17. Double Negation: Not[Not[A]] =:= A
+ *
+ * 18. De Morgan 1: &&[Not[A], Not[B]] =:= Not[A || B]
+ *
+ * 19. De Morgan 2: ||[Not[A], Not[B]] =:= Not[A && B]
+ */
 object Bool {
 
   /**
