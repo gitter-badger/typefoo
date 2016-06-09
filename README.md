@@ -1,5 +1,7 @@
 # TypeFoo
 
+[![Build Status](https://travis-ci.org/harshad-deo/typefoo.svg?branch=master)](https://travis-ci.org/harshad-deo/typefoo)
+
 Typelevel programming allows developers to encode several flavours of runtime invariants into the type system. Unfortunately, 
 libraries that support typelevel programming tend to be poorly documented, difficult to understand and difficult to hack. This makes
 them hard to customize to the needs of a specific project/problem. 
