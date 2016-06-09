@@ -42,32 +42,56 @@ trait False extends Bool {
 object Bool {
 
   /**
-   * Conjunction
+   * Type constructor for logical conjunction
+   *
+   * A && B =:= True if A =:= True and B =:= True
+   *
+   * A && B =:= False otherwise
    */
   type &&[A <: Bool, B <: Bool] = A#If[B, False, Bool]
 
   /**
-   * Disjunction
+   * Type constructor for logical disjunction
+   *
+   * A || B =:= False if A =:= False and B =:= False
+   *
+   * A || B =:= True otherwise
    */
   type ||[A <: Bool, B <: Bool] = A#If[True, B, Bool]
 
   /**
-   * Negation
+   * Type constructor for logical negation
+   *
+   * Not[True] =:= False
+   *
+   * Not[False] =:= True
    */
   type Not[A <: Bool] = A#If[False, True, Bool]
 
   /**
-   * Exclusive OR
+   * Type constructor for logical exclusive or
+   *
+   * A Xor B =:= True if exactly one of A =:= True or B =:= True
+   *
+   * A Xor B =:= False otherwise
    */
   type Xor[A <: Bool, B <: Bool] = A#If[Not[B], B, Bool]
 
   /**
-   * Material Implication
+   * Typeconstructor for material implication
+   *
+   * If A =:= True, A ->> B =:= B
+   *
+   * If A =:= False, the value of B is ignored and the constructor returns True
    */
   type ->>[A <: Bool, B <: Bool] = A#If[B, True, Bool]
 
   /**
-   * Equivalence
+   * Type constructor for logical equivalence
+   *
+   * A Eqv B =:= True if A =:= B
+   *
+   * A Eqv B =:= False otherwise
    */
   type Eqv[A <: Bool, B <: Bool] = A#If[B, Not[B], Bool]
 
