@@ -20,6 +20,9 @@ import org.scalatest.FlatSpec
 
 /**
  * Set of common utility methods used in the rest of the tests
+ *
+ * @author Harshad Deo
+ * @since 0.1
  */
 abstract class BaseSpec extends FlatSpec {
 

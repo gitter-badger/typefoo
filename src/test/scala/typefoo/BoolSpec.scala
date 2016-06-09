@@ -20,6 +20,9 @@ import shapeless.test.illTyped
 
 /**
  * Specifications for church encodings of booleans
+ *
+ * @author Harshad Deo
+ * @since 0.1
  */
 class BoolSpec extends BaseSpec {
 
