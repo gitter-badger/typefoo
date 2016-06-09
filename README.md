@@ -1,5 +1,7 @@
 # TypeFoo
 
+[![Join the chat at https://gitter.im/harshad-deo/typefoo](https://badges.gitter.im/harshad-deo/typefoo.svg)](https://gitter.im/harshad-deo/typefoo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/harshad-deo/typefoo.svg?branch=master)](https://travis-ci.org/harshad-deo/typefoo)
 
 Typelevel programming allows developers to encode several flavours of runtime invariants into the type system. Unfortunately, 
